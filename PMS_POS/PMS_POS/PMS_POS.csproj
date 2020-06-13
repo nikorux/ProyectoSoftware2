@@ -1,0 +1,553 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{29EDBC6A-F23E-4D67-BB36-2994342F2AB8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PMS_POS</RootNamespace>
+    <AssemblyName>PMS_POS</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.5.3, Version=1.5.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Downloads\Bunifu UI\Bunifu UI\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="itextsharp, Version=5.5.13.1, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.1\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.WinForms, Version=0.9.7.1, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.WinForms.0.9.7.1\lib\net45\LiveCharts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="MySql.Data, Version=8.0.16.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\MySQL\Connector NET 8.0\Assemblies\v4.5.2\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controller\ControllerHabitacion.cs" />
+    <Compile Include="Controller\DocumentoC.cs" />
+    <Compile Include="Controller\EmpleadoC.cs" />
+    <Compile Include="Controller\ReservacionC.cs" />
+    <Compile Include="Controller\RubroC.cs" />
+    <Compile Include="Controller\TipoHabitacionC.cs" />
+    <Compile Include="Model\BDGeneral.cs" />
+    <Compile Include="Model\Empleado.cs" />
+    <Compile Include="Model\EstadoHabitaciones.cs" />
+    <Compile Include="Model\Factura_Reservacion.cs" />
+    <Compile Include="Reportes\frmReporteHuesped.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmReporteHuesped.Designer.cs">
+      <DependentUpon>frmReporteHuesped.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Prueba.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Prueba.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReportesDataSet.cs">
+      <DependentUpon>ReportesDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReportesDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportesDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReportesDataSetEmpleado.cs">
+      <DependentUpon>ReportesDataSetEmpleado.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReportesDataSetEmpleado.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportesDataSetEmpleado.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="View\BuscarCheckedIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\BuscarCheckedIn.Designer.cs">
+      <DependentUpon>BuscarCheckedIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\BuscarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\BuscarCliente.Designer.cs">
+      <DependentUpon>BuscarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\BuscarHabitacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\BuscarHabitacion.Designer.cs">
+      <DependentUpon>BuscarHabitacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Documento.cs" />
+    <Compile Include="Model\Habitacion.cs" />
+    <Compile Include="Model\Huesped.cs" />
+    <Compile Include="Controller\HuespedD.cs" />
+    <Compile Include="Model\Producto.cs" />
+    <Compile Include="Model\Reservacion.cs" />
+    <Compile Include="Model\Rubro.cs" />
+    <Compile Include="Model\TipoHabitacion.cs" />
+    <Compile Include="Model\validar.cs" />
+    <Compile Include="View\CheckedIn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\CheckedIn.Designer.cs">
+      <DependentUpon>CheckedIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ConfigurarImagen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ConfigurarImagen.Designer.cs">
+      <DependentUpon>ConfigurarImagen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ConfigurarTipoDocumento.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ConfigurarTipoDocumento.designer.cs">
+      <DependentUpon>ConfigurarTipoDocumento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ConfigurarTipoHabitacion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ConfigurarTipoHabitacion.designer.cs">
+      <DependentUpon>ConfigurarTipoHabitacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ErrorDatosFaltantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ErrorDatosFaltantes.Designer.cs">
+      <DependentUpon>ErrorDatosFaltantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FacturacionCheckIn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\FacturacionCheckIn.Designer.cs">
+      <DependentUpon>FacturacionCheckIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FacturacionCheckOut.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\FacturacionCheckOut.Designer.cs">
+      <DependentUpon>FacturacionCheckOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmCorrecto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmCorrecto.Designer.cs">
+      <DependentUpon>FrmCorrecto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmLogincs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmLogincs.Designer.cs">
+      <DependentUpon>FrmLogincs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmSeguroCerrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmSeguroCerrar.Designer.cs">
+      <DependentUpon>FrmSeguroCerrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Impresion.cs" />
+    <Compile Include="View\InformacionEstablecimiento.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\InformacionEstablecimiento.Designer.cs">
+      <DependentUpon>InformacionEstablecimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\LiquidarServiciosAdquiridos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\LiquidarServiciosAdquiridos.Designer.cs">
+      <DependentUpon>LiquidarServiciosAdquiridos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ListaClientes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ListaClientes.designer.cs">
+      <DependentUpon>ListaClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ListadoReservaciones.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ListadoReservaciones.Designer.cs">
+      <DependentUpon>ListadoReservaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MainScreen.Designer.cs">
+      <DependentUpon>MainScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\NuevaReservacion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\NuevaReservacion.Designer.cs">
+      <DependentUpon>NuevaReservacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\NuevoHuesped.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\NuevoHuesped.designer.cs">
+      <DependentUpon>NuevoHuesped.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\PuntoDeVenta.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\PuntoDeVenta.Designer.cs">
+      <DependentUpon>PuntoDeVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\RegistrarHab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\RegistrarHab.Designer.cs">
+      <DependentUpon>RegistrarHab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\RegistroNuevoCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\RegistroNuevoCliente.Designer.cs">
+      <DependentUpon>RegistroNuevoCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\RegistroNuevoEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\RegistroNuevoEmpleado.Designer.cs">
+      <DependentUpon>RegistroNuevoEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\RegistroProveedor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\RegistroProveedor.Designer.cs">
+      <DependentUpon>RegistroProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Reservaciones.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Reservaciones.Designer.cs">
+      <DependentUpon>Reservaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControlClientes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControlClientes.Designer.cs">
+      <DependentUpon>UserControlClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControlEmpleados.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControlEmpleados.Designer.cs">
+      <DependentUpon>UserControlEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControlHabitaciones.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControlHabitaciones.designer.cs">
+      <DependentUpon>UserControlHabitaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControlInicio.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControlInicio.Designer.cs">
+      <DependentUpon>UserControlInicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControlInicioFaltante.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControlInicioFaltante.Designer.cs">
+      <DependentUpon>UserControlInicioFaltante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\VentanaGraficos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\VentanaGraficos.Designer.cs">
+      <DependentUpon>VentanaGraficos.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Reportes\frmReporteHuesped.resx">
+      <DependentUpon>frmReporteHuesped.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\reporteEmpleados.rdlc" />
+    <EmbeddedResource Include="Reportes\reportehuespedes.rdlc" />
+    <EmbeddedResource Include="Reportes\WizardPrueba.rdlc" />
+    <EmbeddedResource Include="View\BuscarCheckedIn.resx">
+      <DependentUpon>BuscarCheckedIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\BuscarCliente.resx">
+      <DependentUpon>BuscarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\BuscarHabitacion.resx">
+      <DependentUpon>BuscarHabitacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="View\CheckedIn.resx">
+      <DependentUpon>CheckedIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ConfigurarImagen.resx">
+      <DependentUpon>ConfigurarImagen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ConfigurarTipoDocumento.resx">
+      <DependentUpon>ConfigurarTipoDocumento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ConfigurarTipoHabitacion.resx">
+      <DependentUpon>ConfigurarTipoHabitacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ErrorDatosFaltantes.resx">
+      <DependentUpon>ErrorDatosFaltantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FacturacionCheckIn.resx">
+      <DependentUpon>FacturacionCheckIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FacturacionCheckOut.resx">
+      <DependentUpon>FacturacionCheckOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmCorrecto.resx">
+      <DependentUpon>FrmCorrecto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmLogincs.resx">
+      <DependentUpon>FrmLogincs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmSeguroCerrar.resx">
+      <DependentUpon>FrmSeguroCerrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\InformacionEstablecimiento.resx">
+      <DependentUpon>InformacionEstablecimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\LiquidarServiciosAdquiridos.resx">
+      <DependentUpon>LiquidarServiciosAdquiridos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ListaClientes.resx">
+      <DependentUpon>ListaClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ListadoReservaciones.resx">
+      <DependentUpon>ListadoReservaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MainScreen.resx">
+      <DependentUpon>MainScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\NuevaReservacion.resx">
+      <DependentUpon>NuevaReservacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\NuevoHuesped.resx">
+      <DependentUpon>NuevoHuesped.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RegistrarHab.resx">
+      <DependentUpon>RegistrarHab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RegistroNuevoCliente.resx">
+      <DependentUpon>RegistroNuevoCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RegistroNuevoEmpleado.resx">
+      <DependentUpon>RegistroNuevoEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RegistroProveedor.resx">
+      <DependentUpon>RegistroProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Reservaciones.resx">
+      <DependentUpon>Reservaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControlClientes.resx">
+      <DependentUpon>UserControlClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControlEmpleados.resx">
+      <DependentUpon>UserControlEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControlHabitaciones.resx">
+      <DependentUpon>UserControlHabitaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControlInicio.resx">
+      <DependentUpon>UserControlInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControlInicioFaltante.resx">
+      <DependentUpon>UserControlInicioFaltante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\VentanaGraficos.resx">
+      <DependentUpon>VentanaGraficos.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="img\arrows.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Reportes\Prueba.xsc">
+      <DependentUpon>Prueba.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Prueba.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Prueba.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\Prueba.xss">
+      <DependentUpon>Prueba.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\ReportesDataSet.xsc">
+      <DependentUpon>ReportesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\ReportesDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReportesDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\ReportesDataSet.xss">
+      <DependentUpon>ReportesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\ReportesDataSetEmpleado.xsc">
+      <DependentUpon>ReportesDataSetEmpleado.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\ReportesDataSetEmpleado.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReportesDataSetEmpleado.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\ReportesDataSetEmpleado.xss">
+      <DependentUpon>ReportesDataSetEmpleado.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\img_63493.png" />
+    <None Include="Resources\Imagen101.png" />
+    <None Include="Resources\Imagen51.png" />
+    <None Include="Resources\Imagen611.png" />
+    <None Include="Resources\reservas.png" />
+    <None Include="Resources\Imagen34.png" />
+    <None Include="Resources\hotel2.png" />
+    <None Include="Resources\checkin.png" />
+    <None Include="Resources\checkout.png" />
+    <Content Include="Resources\habitacion.png" />
+    <None Include="Resources\habitacion1.png" />
+    <Content Include="Resources\hotel.png" />
+    <None Include="Resources\hotel1.png" />
+    <None Include="Resources\target.png" />
+    <None Include="Resources\sleep.png" />
+    <None Include="Resources\settings %281%29.png" />
+    <None Include="Resources\room-key.png" />
+    <None Include="Resources\recipe-book.png" />
+    <None Include="Resources\peak.png" />
+    <None Include="Resources\overflow.png" />
+    <None Include="Resources\list %282%29.png" />
+    <None Include="Resources\line2.png" />
+    <None Include="Resources\line.png" />
+    <None Include="Resources\hotel %281%29.png" />
+    <None Include="Resources\end.png" />
+    <None Include="Resources\bag.png" />
+    <None Include="Resources\arrows %283%29.png" />
+    <None Include="Resources\arrows %282%29.png" />
+    <None Include="Resources\arrows.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
